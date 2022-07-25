@@ -1,0 +1,84 @@
+name: EasyWarp
+version: '${project.version}'
+main: com.krisapps.easywarp.easywarp.EasyWarp
+api-version: 1.17
+prefix: EasyWarp
+authors: [ _TheTechGuy_ ]
+description: Plugin that allows you to easily create warps and warp to them.
+
+commands:
+  createwarp:
+    usage: "/createwarp <id> <display_name>"
+    description: "Creates a new warp at current location."
+    permission: easywarp.edit
+    permission-message: "You lack the required permissions!"
+  warp:
+    usage: "/warp <id>"
+    description: "Teleports player to the selected warp."
+    permission: easywarp.warp
+    permission-message: "You lack the required permissions!"
+  editwarp:
+    usage: "/editwarp <id> <param> <value>"
+    description: "Edits the parameters of the warp."
+    permission: easywarp.edit
+    permission-message: "You lack the required permissions!"
+  deletewarp:
+    usage: "/deletewarp <id>"
+    description: "Deletes the warp under specified id."
+    permission: easywarp.edit
+    permission-message: "You lack the required permissions!"
+  listwarps:
+    usage: "/listwarps [-p]"
+    description: "Lists all existing warps. Add -p for personal warps."
+    permission: easywarp.edit
+    permission-message: "You lack the required permissions!"
+  back:
+    usage: "/back"
+    description: "Teleports you back to where you warped from."
+    permission: easywarp.warp
+    permission-message: "You lack the required permissions!"
+  createpw:
+    usage: "/createpw <id> <display_name>"
+    description: "Creates a new personal warp only visible and accessible by the author."
+    permission: easywarp.cpw
+  editpw:
+    usage: "/editpw <id> <param> <value>"
+    description: "Allows you to edit the properties of personal warps."
+    permission: easywarp.cpw
+  invite:
+    usage: "/invite <create/list> [warpID] <playerName> <useCount>"
+    description: "Creates an invite to your personal warp. You can provide maximum uses."
+    permission: easywarp.cpw
+  invitewarp:
+    usage: "/invitewarp <player> <warp> <uses>"
+    description: "Warps you to whatever player's warp. Not dispatched by a player."
+    permission: easywarp.cpw
+  setdimension:
+    usage: "/setdimension <dimension>"
+    description: "Changes the dimension of specified warp. Use with caution!"
+    permission: easywarp.edit
+  setpersonaldimension:
+    usage: "/setpersonaldimension <dimension>"
+    description: "Changes the dimension of specified personal warp. Use with caution!"
+    permission: easywarp.cpw
+
+permissions:
+  easywarp.edit:
+    description: "Allows you to create, edit and delete warps."
+    default: op
+  easywarp.warp:
+    description: "Allows you to warp."
+    default: true
+  easywarp.usesyscommands:
+    description: "Let's user access all system commands not usually dispatched by a player. Required for some commands to function properly."
+    default: true
+  easywarp.cpw:
+    description: "Allows user to create private warps."
+    default: true
+  easywarp.*:
+    default: op
+    description: "Grants you admin access to the plugin's commands."
+    children:
+      easywarp.edit: true
+      easywarp.warp: true
+      easywarp.cpw: true

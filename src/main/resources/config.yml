@@ -1,0 +1,25 @@
+#Configuration for ${build.finalName}
+
+warp-messages:
+
+  #To get the display_name of the warp, use $warp
+  #To get the id of the warp use $target
+  #To use colored text, use '&' and the color code.
+  #The annotations to the variables should only be used in the messages that contain them.
+
+  #Message that the player gets when warping.
+  arrival-message: "Welcome to $warp!"
+
+  #Message displayed when warping the player.
+  warping-message: "Warping you to $target..."
+
+  #Message displayed when player uses /back
+  back-message: "&eTeleported you back to the previous location."
+
+  #Message displayed if there are no coordinates saved for the player.
+  back-message-cannot: "&aThere are no previous coordinates saved."
+
+rules:
+  show-arrival-message: true
+  show-warping-message: true
+  show-back-message: true
