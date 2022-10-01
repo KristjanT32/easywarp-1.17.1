@@ -6,7 +6,7 @@
 
     <groupId>com.krisapps.easywarp</groupId>
     <artifactId>EasyWarp</artifactId>
-    <version>1.1</version>
+    <version>1.1-1.19</version>
     <packaging>jar</packaging>
 
     <name>EasyWarp</name>
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <version>1.19.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
